@@ -12,21 +12,21 @@ Admin privileges aren't needed for any functions.
 `Get-HostChecks [-Defense] [-DefenseOnly] [-SkipLocalAdmins]`
 
 ### Individual Checks
-`Get-HostSummary` - summary of general user/host information
-`Get-HostIPAddress` - IPv4 address of all adaptors
-`Get-LocalUsers`
-`Get-LocalAdmins`
-`Get-NetVersions` - Discover installed .NET versions
-`Get-PowerShellVersions`
-`Get-PSExecutionPolicy` - PowerShell execution policy for all scopes
-`Get-PSLogging` - check PowerShell logging status (scriptblock, transcription, module)
-`Get-SMBv1` - SMBv1 enabled or disabled
-`Get-LAPS` - check for existence of Admpwd.dll file
-`Get-AntiVirus` - Currently only checks for AV products installed
-`Get-MappedDrives`
-`Get-NetShares`
-`Get-UnattendedInstallFile` - checks for file existence in several locations
-`Get-CachedGPPPassword` - checks for cached Group Policy prefernces 'cpassword'. Also includes scheduledtasksv2 type.
+* `Get-HostSummary` - summary of general user/host information
+* `Get-HostIPAddress` - IPv4 address of all adaptors
+* `Get-LocalUsers`
+* `Get-LocalAdmins`
+* `Get-NetVersions` - Discover installed .NET versions
+* `Get-PowerShellVersions`
+* `Get-PSExecutionPolicy` - PowerShell execution policy for all scopes
+* `Get-PSLogging` - check PowerShell logging status (scriptblock, transcription, module)
+* `Get-SMBv1` - SMBv1 enabled or disabled
+* `Get-LAPS` - check for existence of Admpwd.dll file
+* `Get-AntiVirus` - Currently only checks for AV products installed
+* `Get-MappedDrives`
+* `Get-NetShares`
+* `Get-UnattendedInstallFile` - checks for file existence in several locations
+* `Get-CachedGPPPassword` - checks for cached Group Policy prefernces 'cpassword'. Also includes scheduledtasksv2 type.
 
 ### Switches
 
@@ -57,3 +57,7 @@ Future additions will include:
 - [ ] Built-in port scanner (stripped down version of Nmap)
 - [ ] Proxy settings
 - [ ] A filtered list of listening or established ports
+
+## Credits
+[https://github.com/PowerShellMafia/PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
+[https://github.com/dafthack/HostRecon](https://github.com/dafthack/HostRecon)
