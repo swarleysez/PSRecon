@@ -1,6 +1,8 @@
 # PSRecon
 A Windows OS reconnaissance tool to perform common enumeration and security checks.
 
+Supported by @swarleysez
+
 ## Setup
 Admin privileges aren't needed for any functions.
 
@@ -60,5 +62,4 @@ Future additions will include:
 
 ## Credits
 [https://github.com/PowerShellMafia/PowerSploit](https://github.com/PowerShellMafia/PowerSploit)
-
-[https://github.com/dafthack/HostRecon](https://github.com/dafthack/HostRecon)
+<br>[https://github.com/dafthack/HostRecon](https://github.com/dafthack/HostRecon)
