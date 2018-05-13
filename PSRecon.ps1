@@ -380,81 +380,6 @@ function Get-SMBv1
 }
 
 
-function Get-SMBSigning
-{
-    [CmdletBinding()]
-    Param
-    (
-        $localhost = 'localhost',
-
-        [switch]
-        $Defense
-    )
-
-    Write-Host "`n"
-    Write-Host "[*] Checking for SMB Signing`n" -ForegroundColor Cyan
-    
-    $WinClientVers = @(".10.",".7.",".XP.",".Vista.")
-    $WinServerVers = @(".2000.",".2003.",".2008.",".2012.",".2016.")
-
-    if ($WinClientVers | Where-Object {$OSVersion -match $_})
-    {
-        $SMBSignWKS = (Get-ItemProperty -Path `
-        "HKLM:\SYSTEM\CurrentControlSet\Services\Rdr\Parameters" `
-        SMB1 -ErrorAction SilentlyContinue).SMB1
-
-        if ($SMBv1Reg -eq $null)
-        {
-        if ($Defense)
-        {
-        Write-Warning 'The registry value for SMB1 is missing (default = 1), which means it is enabled.'
-        }
-
-        else
-        {
-        Write-Output 'The registry value for SMB1 is missing (default = 1), which means it is enabled.'
-        }
-        }
-
-        elseif ($SMBv1Reg -ne 0)
-        { 
-        if ($Defense)
-        {
-        Write-Warning 'SMBv1 is Enabled'
-        }
-
-        else
-        {
-        Write-Output 'SMBv1 is Enabled'
-        }
-        }
-
-        else
-        {
-        Write-Output 'SMBv1 is NOT enabled'
-        }
-    }
-
-    elseif ($WinServerVers | Where-Object {$OSVersion -match $_})
-    {
-        
-    }
-
-    else
-    {
-        if ($Defense)
-        {
-            Write-Warning 'SMB Signing...'
-        }
-
-        else
-        {
-            Write-Ouput 'SMB Signing...'
-        }
-    }
-}
-
-
 function Get-LAPS
 {
     [CmdletBinding()]
@@ -1052,28 +977,5 @@ function Get-HostChecks
         Get-MappedDrives
         Get-NetShares
         Get-CachedGPPPassword
-    }
-}
-
-
-function Get-NetworkChecks
-{
-    [CmdletBinding()]
-    Param
-    (
-        #[ValidateNotNullOrEmpty] <-- Throwing errors. Version errors originate from?
-        [string]
-        $Domain
-    )
-
-    try
-    {
-        $ADSites = nltest /dsaddresstosite:$Domain
-        Write-Output $ADSites
-    }
-
-    catch
-    {
-        Write-Warning 'That domain could not be resolved.'
     }
 }
