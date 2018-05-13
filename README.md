@@ -4,9 +4,10 @@ A Windows OS reconnaissance tool to perform common enumeration and security chec
 Supported by @swarleysez
 
 ## Setup
-Admin privileges aren't needed for any functions.
-
 `PS C:\Windows\Temp> Import-Module .\PSRecon.ps1`
+* Admin privileges aren't needed for any functions.
+* All code written for PowerShell version 2 or higher
+* Written for Windows 7 or higher / Server 2008 or higher
 
 ## Usage
 
